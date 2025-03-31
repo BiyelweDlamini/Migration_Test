@@ -22,8 +22,13 @@ print(migration_data.columns)
 
 #set the targert
 
-y = [["2000[2000]"]] 
+y = migration_data['2000[2000]']
 
 #Select the features
 
+migration_features = ['Country Origin Name', 'Country Origin Code',
+                      'Migration by Gender Name', 'Migration by Gender Code',
+                      'Country Dest Name', 'Country Dest Code', '1960 [1960]', 
+                      '1970 [1970]','1980 [1980]', '1990 [1990]']
 
+X = migration_data[migration_features]
