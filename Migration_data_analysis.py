@@ -34,3 +34,8 @@ migration_features = ['Country Origin Name', 'Country Origin Code',
 #Storing the features in the x variable
 
 X = migration_data[migration_features]
+
+#Splitting the data from the CSV into training data and vcalidation data 
+
+trainX, valX, trainy, valy = train_test_split(X, y, random_state = 0)
+
