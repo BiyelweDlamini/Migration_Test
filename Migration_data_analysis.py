@@ -14,4 +14,4 @@ migration_file_path = r'C:\Users\biyel\OneDrive\Desktop\Project_2025\Migration_T
 migration_data = pd.read_csv(migration_file_path)
 print(migration_data.columns)
 
-y = migration_data.2000[2000]
+y = [[2000[2000]]] 
