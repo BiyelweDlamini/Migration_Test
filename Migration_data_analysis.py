@@ -7,7 +7,8 @@ This is a temporary script file.
 
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
+
+#from sklearn.model_selection import train_test_split
 
 #initialize file path and add the r prefix to prefix the string to let Python know that it is a raw string (to avoid the backlashes being seen as escape sequences)
 migrationFilePath = r'C:\Users\biyel\OneDrive\Desktop\Project_2025\Migration_Test\IndianMigrationHistory.csv'
@@ -39,5 +40,16 @@ X = migrationData[migrationFeatures]
 
 #trainX, valX, trainy, valy = train_test_split(X, y, random_state = 0)
 
-#migration_model
+# Defining the model and specifying the random state
+
+migrationModel = RandomForestRegressor(random_state=1)
+
+# Fitting the model, or training the model
+
+migrationModel.fit(X, y)
+
+
+
+
+
 
