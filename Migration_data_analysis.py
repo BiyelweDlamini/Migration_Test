@@ -23,7 +23,13 @@ print(migrationData.columns)
 
 #set the targert
 
-y = migrationData['2000[2000]']
+#rename the target column 
+migrationData.rename(columns = {'2000 [2000]' : 'target'}, inplace = True)
+
+print(migrationData.columns)
+
+# Renamed target stored in the variable y
+y = migrationData.target
 
 #Selecting the features
 
@@ -36,7 +42,7 @@ migrationFeatures = ['Country Origin Name', 'Country Origin Code',
 
 X = migrationData[migrationFeatures]
 
-#Splitting the data from the CSV into training data and vcalidation data
+#print(X)
  
 #splitting data for training and validation for more accurate results
 #trainX, valX, trainy, valy = train_test_split(X, y, random_state = 0)
