@@ -36,8 +36,9 @@ migrationFeatures = ['Country Origin Name', 'Country Origin Code',
 
 X = migrationData[migrationFeatures]
 
-#Splitting the data from the CSV into training data and vcalidation data 
-
+#Splitting the data from the CSV into training data and vcalidation data
+ 
+#splitting data for training and validation for more accurate results
 #trainX, valX, trainy, valy = train_test_split(X, y, random_state = 0)
 
 # Defining the model and specifying the random state
