@@ -42,8 +42,9 @@ migrationFeatures = ['Country Origin Name', 'Country Origin Code',
 
 X = migrationData[migrationFeatures]
 
-#print(X)
- 
+print(X.describe())
+
+print(X.head())
 #splitting data for training and validation for more accurate results
 #trainX, valX, trainy, valy = train_test_split(X, y, random_state = 0)
 
@@ -53,7 +54,7 @@ migrationModel = RandomForestRegressor(random_state=1)
 
 # Fitting the model, or training the model
 
-migrationModel.fit(X, y)
+#migrationModel.fit(X, y)
 
 
 
