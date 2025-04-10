@@ -7,8 +7,11 @@ This is a temporary script file.
 
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.preprocessing import LabelEncoder
 
 #from sklearn.model_selection import train_test_split
+
+#DATA COLLECTION
 
 #initialize file path and add the r prefix to prefix the string to let Python know that it is a raw string (to avoid the backlashes being seen as escape sequences)
 migrationFilePath = r'C:\Users\biyel\OneDrive\Desktop\Project_2025\Migration_Test\IndianMigrationHistory.csv'
@@ -19,16 +22,19 @@ migrationData = pd.read_csv(migrationFilePath)
 
 #print all the columns in the csv file
 
-print(migrationData.columns)
+#Columns before the column 2000 [2000] is changed to target
+#print(migrationData.columns)
 
-#set the targert
+#Set the targert
 
-#rename the target column 
+#Rename the target column 
+
 migrationData.rename(columns = {'2000 [2000]' : 'target'}, inplace = True)
 
-print(migrationData.columns)
+#Columns after the column 2000 [2000] is changed to target
+#print(migrationData.columns)
 
-# Renamed target stored in the variable y
+# Renamed target stored in the variable y and set as the target
 y = migrationData.target
 
 #Selecting the features
@@ -45,6 +51,7 @@ X = migrationData[migrationFeatures]
 print(X.describe())
 
 print(X.head())
+
 #splitting data for training and validation for more accurate results
 #trainX, valX, trainy, valy = train_test_split(X, y, random_state = 0)
 
