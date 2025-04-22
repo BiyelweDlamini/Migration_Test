@@ -8,6 +8,7 @@ This is a temporary script file.
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder
+import matplotlib.pyplot as plt
 
 #from sklearn.model_selection import train_test_split
 
@@ -85,6 +86,10 @@ migrationModel = RandomForestRegressor(random_state=1)
 # Fitting the model, or training the model
 
 migrationModel.fit(X, y)
+
+migrationPrediction = migrationModel.predict(X)
+
+plt.bar(migrationPrediction, 10000, 5000)
 
 
 
