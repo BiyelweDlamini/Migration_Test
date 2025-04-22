@@ -17,6 +17,7 @@ from sklearn.preprocessing import LabelEncoder
 migrationFilePath = r'C:\Users\biyel\OneDrive\Desktop\Project_2025\Migration_Test\IndianMigrationHistory.csv'
 
 #read the csv file
+
 try:
        migrationData = pd.read_csv(migrationFilePath)
 except FileNotFoundError:
@@ -37,7 +38,26 @@ migrationData.rename(columns = {'2000 [2000]' : 'target'}, inplace = True)
 #Columns after the column 2000 [2000] is changed to target
 #print(migrationData.columns)
 
+#Initialize the LabelEncoder
+labelEncoder = LabelEncoder()
+
+#Identifying the columns in the .csv file that need to be encoded
+
+encodeColumns = ['Country Origin Name', 'Country Origin Code',
+                 'Migration by Gender Name', 'Migration by Gender Code',
+                 'Country Dest Name', 'Country Dest Code']
+
+#Loop through each column and apply the label encoding
+
+for column in encodeColumns:
+    if column in migrationData.columns:
+        migrationData[column] = labelEncoder.fit_transform(migrationData[column])
+        print(f"Column '{column}' has been successfully encoded.")
+    else:
+        print(f"Warning: Column '{column}' not found in the DataFrame.")
+
 # Renamed target stored in the variable y and set as the target
+
 y = migrationData.target
 
 #Selecting the features
@@ -64,7 +84,7 @@ migrationModel = RandomForestRegressor(random_state=1)
 
 # Fitting the model, or training the model
 
-#migrationModel.fit(X, y)
+migrationModel.fit(X, y)
 
 
 
