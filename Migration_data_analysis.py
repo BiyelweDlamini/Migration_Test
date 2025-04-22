@@ -89,7 +89,7 @@ migrationModel.fit(X, y)
 
 migrationPrediction = migrationModel.predict(X)
 
-plt.bar(migrationPrediction, 10000, 5000)
+plt.bar(migrationPrediction, 100000, 100000)
 
 
 
