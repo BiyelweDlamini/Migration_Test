@@ -17,8 +17,11 @@ from sklearn.preprocessing import LabelEncoder
 migrationFilePath = r'C:\Users\biyel\OneDrive\Desktop\Project_2025\Migration_Test\IndianMigrationHistory.csv'
 
 #read the csv file
-
-migrationData = pd.read_csv(migrationFilePath)
+try:
+       migrationData = pd.read_csv(migrationFilePath)
+except FileNotFoundError:
+    print("Error: The File was not found")
+    exit()
 
 #print all the columns in the csv file
 
